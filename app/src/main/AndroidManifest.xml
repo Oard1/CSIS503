@@ -6,10 +6,22 @@
         android:icon="@mipmap/ic_launcher"
         android:label="To-Do">
         <activity
-            android:name=".ReferenceActivity1"
+            android:name=".SettingViewActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".ListPickerActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
     </application>
 

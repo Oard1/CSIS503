@@ -38,7 +38,12 @@
         implementation(libs.material)
         implementation(libs.androidx.activity)
         implementation(libs.androidx.constraintlayout)
+        implementation(libs.androidx.compose.material3)
+        implementation(libs.androidx.compose.runtime)
         debugImplementation("androidx.compose.ui:ui-tooling:1.7.5")
+        implementation("androidx.compose.material:material-icons-extended:1.6.0")
+        implementation("androidx.datastore:datastore-preferences:1.1.1")
+
 
         // --- Lifecycle / ViewModel (Compose interop) ---
         implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")

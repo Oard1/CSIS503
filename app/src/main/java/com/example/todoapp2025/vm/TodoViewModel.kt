@@ -32,6 +32,14 @@ class TodoViewModel(private val repo: TodoRepository) : ViewModel() {
         return if (s.ascending) cmp else cmp.reversed()
     }
 
+    fun update(t: Todo) {
+        viewModelScope.launch {
+            repo.update(t)
+        }
+    }
+
+
+
     fun setSort(by: SortBy? = null, toggleAscIfSame: Boolean = false) {
         val cur = sortSpec.value
         val next = if (by == null) cur.copy(ascending = !cur.ascending)
@@ -39,6 +47,7 @@ class TodoViewModel(private val repo: TodoRepository) : ViewModel() {
         else cur.copy(by = by)
         sortSpec.value = next
     }
+
 
     fun add(title: String, category: String, dueAt: Long?, priority: Int) = viewModelScope.launch {
         if (title.isNotBlank()) repo.add(
